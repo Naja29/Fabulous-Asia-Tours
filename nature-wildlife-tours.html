@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nature & Wildlife Tours - 11 Nights 12 Days comprehensive wildlife safari experience in Sri Lanka">
+  <meta name="keywords" content="wildlife tours Sri Lanka, nature tours, safari, wildlife holiday">
+  <meta name="author" content="Fabulous Asia Tours">
+  
+  <title>Nature & Wildlife Tours - 11N/12D | Fabulous Asia Tours</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <style>
+    /* Tab Styles */
+    .tour-tabs {
+      display: flex;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-lg);
+      flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+      padding: 0.75rem 2rem;
+      border: 2px solid var(--primary-color);
+      background: white;
+      color: var(--primary-color);
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: var(--transition-base);
+    }
+    
+    .tab-btn:hover {
+      background: var(--primary-light);
+      color: white;
+      border-color: var(--primary-light);
+    }
+    
+    .tab-btn.active {
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    /* Day Item Accordion */
+    .day-item {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--spacing-md);
+      overflow: hidden;
+      transition: var(--transition-base);
+    }
+    
+    .day-item:hover {
+      box-shadow: var(--shadow-md);
+    }
+    
+    .day-header {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      padding: var(--spacing-md);
+      cursor: pointer;
+      background: white;
+      transition: var(--transition-base);
+    }
+    
+    .day-header:hover {
+      background: var(--background-light);
+    }
+    
+    .day-number {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    
+    .day-info {
+      flex: 1;
+    }
+    
+    .day-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: var(--text-dark);
+    }
+    
+    .day-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      text-transform: uppercase;
+    }
+    
+    .day-icon {
+      color: var(--text-gray);
+      transition: var(--transition-base);
+    }
+    
+    .day-item.active .day-icon {
+      transform: rotate(180deg);
+    }
+    
+    .day-content {
+      padding: 0 var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) + 50px + var(--spacing-md));
+      display: none;
+    }
+    
+    .day-item.active .day-content {
+      display: block;
+      animation: fadeInDown 0.3s ease;
+    }
+    
+    .day-details {
+      color: var(--text-gray);
+      line-height: 1.8;
+    }
+    
+    .day-details ul {
+      margin: var(--spacing-sm) 0;
+      padding-left: var(--spacing-md);
+    }
+    
+    .day-details ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .overnight-stay {
+      margin-top: var(--spacing-md);
+      padding: var(--spacing-sm);
+      background: var(--background-light);
+      border-radius: var(--radius-md);
+      font-weight: 500;
+      color: var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+94775659732">+94 77-565-9732</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:info@fabulousasiatour.com">info@fabulousasiatour.com</a>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://tripadvisor.com" target="_blank" aria-label="TripAdvisor">
+          <i class="fab fa-tripadvisor"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Fabulous Asia Tours Logo" class="logo-icon">
+      </a>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="tailor-made-tours.html">Tailor Made Tours</a></li>
+          <li><a href="tour-packages.html" class="active">Tour Packages</a></li>
+          <li><a href="transfer-service.html">Taxi Service</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section page-hero tour-packages-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content animate-fade-in-up">
+      <h1>Nature & Wildlife Tours</h1>
+    </div>
+  </section>
+
+  <!-- Tour Details Section -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="grid grid-2" style="gap: var(--spacing-2xl); align-items: start;">
+        
+        <!-- Left Column - Tour Information -->
+        <div class="scroll-reveal">
+          <!-- Tour Image -->
+          <div class="card hover-zoom" style="margin-bottom: var(--spacing-lg);">
+            <img src="images/nature-wildlife-tour.jpg" alt="Nature & Wildlife Tours" style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius-lg);">
+          </div>
+
+          <!-- Duration -->
+          <p style="font-size: 1.1rem; color: var(--text-gray); margin-bottom: var(--spacing-md);">
+            <i class="fas fa-clock"></i> <strong>11 Nights - 12 Days</strong>
+          </p>
+
+          <h2 style="margin-bottom: var(--spacing-md);">Nature & Wildlife Tours</h2>
+
+          <!-- Tabs -->
+          <div class="tour-tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'information')">Information</button>
+            <button class="tab-btn" onclick="openTab(event, 'travelPlan')">Travel Plan</button>
+            <button class="tab-btn" onclick="openTab(event, 'includeExclude')">Include | Exclude</button>
+          </div>
+
+          <!-- Tab Content: Information -->
+          <div id="information" class="tab-content active">
+            <div class="card" style="padding: var(--spacing-lg);">
+              <h3 style="margin-bottom: var(--spacing-md);">Details</h3>
+              <p style="text-align: justify; line-height: 1.8; margin-bottom: var(--spacing-md);">
+                Of course, Sri Lanka is a tiny country. Yet, what it has cannot be found elsewhere. Especially, the wildlife of Sri Lanka is just so special that it attracts a higher percentage of tourists. In fact, this is one of the best destinations for wildlife in Asia. The country boats in varieties of flora and fauna, exotic animals, and much more. The chapter on wildlife has no end in Sri Lanka. It is always fresh and exciting. In fact, there are different offers for wildlife tours.
+              </p>
+              <p style="text-align: justify; line-height: 1.8;">
+                You will be benefited with many other things like unique accommodations if you have chosen the 'Wildlife Holiday' for your tour. Sri Lankan tourism never goes out of the picture because it has so much to offer to its visitors. This package is just the right package for a nature lover. He or she wouldn't get enough of the Sri Lankan wildlife. We have experts to guide you throughout the exciting journey and you are going to get the experience of what you select us. We guarantee an excellent journey by customizing the packages as per your needs. We value your excitement and enjoyment.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tab Content: Travel Plan -->
+          <div id="travelPlan" class="tab-content">
+            <div class="day-itinerary">
+              
+              <!-- Day 1 -->
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">01</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 1 : AIRPORT / NEGOMBO</div>
+                    <div class="day-subtitle">PICKUP & ASSISTANCE AT THE AIRPORT</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Arrival to Sri Lanka, Pickup & Assistance at the Airport, Transfer to Negombo, Relax at the Hotel, Overnight stay in Negombo</p>
+                    <ul>
+                      <li>Overnight stay at : 2* to 5* Star Hotel with Pool</li>
+                      <li>Day 01 Meal Plan : Breakfast & Dinner ( HB )</li>
+                      <li>Expected Travel Time | Negombo - 30 Mins drive</li>
+                    </ul>
+                    <div class="overnight-stay">OVER NIGHT STAY AT SIGIRIYA</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 2 -->
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">02</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 2 : SIGIRIYA</div>
+                    <div class="day-subtitle">TRADITIONAL VILLAGE TOUR WITH LUNCH</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Transfer to Sigiriya, En Route Visit to Dambulla Golden Temple (Heritage Site) - (Approximately 400 to 500 Steps to Climb), Traditional Village Tour with Lunch, Exploration of Sigiriya (Heritage Site) - (Approximately 1200 Steps to Climb)</p>
+                    <ul>
+                      <li>Overnight stay at : 2* to 5* Star Hotel with Pool</li>
+                      <li>Day 02 Meal Plan : Breakfast & Dinner ( HB )</li>
+                      <li>Expected Travel Time | Negombo - Sigiriya - 03 1/2 Hour drive</li>
+                    </ul>
+                    <div class="overnight-stay">OVER NIGHT STAY AT SIGIRIYA</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 3 -->
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">03</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 3 : PIDURANGALA TEMPLE</div>
+                    <div class="day-subtitle">PIDURANGALA TEMPLE & VIEW POINT</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Early morning hike to Pidurangala Temple for spectacular sunrise views over Sigiriya Rock. Experience the ancient temple and panoramic vistas of the surrounding countryside.</p>
+                    <ul>
+                      <li>Overnight stay at : 2* to 5* Star Hotel with Pool</li>
+                      <li>Day 03 Meal Plan : Breakfast & Dinner ( HB )</li>
+                    </ul>
+                    <div class="overnight-stay">OVER NIGHT STAY AT SIGIRIYA</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 4 -->
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">04</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 4 : KANDY</div>
+                    <div class="day-subtitle">KANDY CITY TOUR</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Transfer to Kandy, Visit Temple of the Tooth Relic, Explore Kandy City, Cultural Dance Show in the evening. Kandy Lake walk and shopping at local markets.</p>
+                    <ul>
+                      <li>Overnight stay at : 2* to 5* Star Hotel with Pool</li>
+                      <li>Day 04 Meal Plan : Breakfast & Dinner ( HB )</li>
+                      <li>Expected Travel Time | Sigiriya - Kandy - 02 1/2 Hour drive</li>
+                    </ul>
+                    <div class="overnight-stay">OVER NIGHT STAY AT KANDY</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 5 -->
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">05</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 5 : NUWARA ELIYA</div>
+                    <div class="day-subtitle">VISIT TO RAMBODA WATERFALLS</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Scenic drive to Nuwara Eliya through tea plantations, Visit Ramboda Falls, Tea Factory & Plantation visit, Explore Nuwara Eliya town - the "Little England" of Sri Lanka.</p>
+                    <ul>
+                      <li>Overnight stay at : 2* to 5* Star Hotel</li>
+                      <li>Day 05 Meal Plan : Breakfast & Dinner ( HB )</li>
+                      <li>Expected Travel Time | Kandy - Nuwara Eliya - 02 1/2 Hour drive</li>
+                    </ul>
+                    <div class="overnight-stay">OVER NIGHT STAY AT NUWARA ELIYA</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 6 -->
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">06</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 6 : HORTON PLAINS</div>
+                    <div class="day-subtitle">VISIT TO RAMBODA WATERFALLS</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Early morning visit to Horton Plains National Park, Hike to World's End and Baker's Falls, Experience the unique biodiversity of the plateau.</p>
+                    <ul>
+                      <li>Overnight stay at : 2* to 5* Star Hotel</li>
+                      <li>Day 06 Meal Plan : Breakfast & Dinner ( HB )</li>
+                    </ul>
+                    <div class="overnight-stay">OVER NIGHT STAY AT NUWARA ELIYA</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 7 -->
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">07</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 7 : NANU OYA - ELLA</div>
+                    <div class="day-subtitle">TRAIN JOURNEY</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>One of the most scenic train journeys in the world from Nanu Oya to Ella through tea plantations, mountains and tunnels. Visit Nine Arch Bridge, Little Adam's Peak.</p>
+                    <ul>
+                      <li>Overnight stay at : 2* to 5* Star Hotel</li>
+                      <li>Day 07 Meal Plan : Breakfast & Dinner ( HB )</li>
+                      <li>Expected Travel Time | Train Journey - 03 Hours</li>
+                    </ul>
+                    <div class="overnight-stay">OVER NIGHT STAY AT ELLA</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 8 -->
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">08</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 8 : UDAWALAWE</div>
+                    <div class="day-subtitle">BABY ELEPHANT CARRYING CENTER</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Transfer to Udawalawe, Visit Elephant Transit Home, Udawalawe National Park Safari - one of the best places to see wild elephants in Sri Lanka.</p>
+                    <ul>
+                      <li>Overnight stay at : 2* to 5* Star Hotel</li>
+                      <li>Day 08 Meal Plan : Breakfast & Dinner ( HB )</li>
+                      <li>Expected Travel Time | Ella - Udawalawe - 02 Hour drive</li>
+                    </ul>
+                    <div class="overnight-stay">OVER NIGHT STAY AT UDAWALAWE</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 9 -->
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">09</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 9 : MIRISSA</div>
+                    <div class="day-subtitle">MIRISSA BEACH</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Transfer to Mirissa Beach, Relax at the beautiful golden sand beach, Optional whale watching tour (seasonal), Enjoy sunset at the beach.</p>
+                    <ul>
+                      <li>Overnight stay at : 2* to 5* Star Beach Hotel</li>
+                      <li>Day 09 Meal Plan : Breakfast & Dinner ( HB )</li>
+                      <li>Expected Travel Time | Udawalawe - Mirissa - 02 Hour drive</li>
+                    </ul>
+                    <div class="overnight-stay">OVER NIGHT STAY AT MIRISSA</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 10 -->
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">10</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 10 : UNAWATUNA</div>
+                    <div class="day-subtitle">WALES & DOLPHINS</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Visit Galle Fort (UNESCO World Heritage Site), Explore Unawatuna Beach, Jungle Beach visit, Optional snorkeling and diving activities.</p>
+                    <ul>
+                      <li>Overnight stay at : 2* to 5* Star Beach Hotel</li>
+                      <li>Day 10 Meal Plan : Breakfast & Dinner ( HB )</li>
+                      <li>Expected Travel Time | Mirissa - Unawatuna - 45 Mins drive</li>
+                    </ul>
+                    <div class="overnight-stay">OVER NIGHT STAY AT UNAWATUNA</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 11 -->
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">11</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 11 : BENTHOTA</div>
+                    <div class="day-subtitle">WATER SPORTS</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Transfer to Bentota, Water sports activities, Madu River Safari, Visit Turtle Hatchery, Relax at Bentota Beach.</p>
+                    <ul>
+                      <li>Overnight stay at : 2* to 5* Star Beach Hotel</li>
+                      <li>Day 11 Meal Plan : Breakfast & Dinner ( HB )</li>
+                      <li>Expected Travel Time | Unawatuna - Bentota - 01 1/2 Hour drive</li>
+                    </ul>
+                    <div class="overnight-stay">OVER NIGHT STAY AT BENTOTA</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 12 -->
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">12</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 12 : NUWARA ELIYA</div>
+                    <div class="day-subtitle">VISIT TO RAMBODA WATERFALLS</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Leisure morning at Bentota, Transfer to Airport, Departure with wonderful memories of Sri Lanka.</p>
+                    <ul>
+                      <li>Day 12 Meal Plan : Breakfast</li>
+                      <li>Expected Travel Time | Bentota - Airport - 02 Hours drive</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tab Content: Include/Exclude -->
+          <div id="includeExclude" class="tab-content">
+            <div class="card" style="padding: var(--spacing-lg);">
+              <h3 style="margin-bottom: var(--spacing-md); color: #28a745;">
+                <i class="fas fa-check-circle"></i> Included
+              </h3>
+              <ul style="line-height: 2; margin-bottom: var(--spacing-xl);">
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Airport pickup and drop-off</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Accommodation in selected hotels (2* to 5*)</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Daily breakfast and dinner (HB basis)</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Transportation in air-conditioned vehicle</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> English speaking chauffeur guide</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> All entrance fees to sites mentioned</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Safari at Udawalawe National Park</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Traditional village tour with lunch</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Cultural dance show in Kandy</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Train tickets (Nanu Oya to Ella)</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> All government taxes and service charges</li>
+              </ul>
+
+              <h3 style="margin-bottom: var(--spacing-md); color: #dc3545;">
+                <i class="fas fa-times-circle"></i> Excluded
+              </h3>
+              <ul style="line-height: 2;">
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> International airfare</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Visa fees</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Travel insurance</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Lunch during the tour (except village lunch)</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Beverages and personal expenses</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Camera and video permits</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Optional activities (whale watching, water sports, etc.)</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Tips and gratuities</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Any services not mentioned in inclusions</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column - Booking Form -->
+        <div class="scroll-reveal">
+          <div class="card" style="padding: var(--spacing-lg); background: var(--secondary-color); color: white; position: sticky; top: 100px;">
+            <h3 style="margin-bottom: var(--spacing-md); color: white;">Send An Inquiry</h3>
+            
+            <form id="tourInquiryForm">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+              </div>
+
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Your Email" required>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Country" required>
+              </div>
+
+              <div class="form-group">
+                <input type="tel" class="form-control" placeholder="Phone Number" required>
+              </div>
+
+              <div class="grid grid-2" style="gap: var(--spacing-md);">
+                <div class="form-group">
+                  <input type="number" class="form-control" placeholder="Adult" min="1" value="1" required>
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control" placeholder="Child" min="0" value="0">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="date" class="form-control" placeholder="Arrival Date" required>
+              </div>
+
+              <div class="form-group">
+                <input type="date" class="form-control" placeholder="Departure Date" required>
+              </div>
+
+              <div class="form-group">
+                <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-white" style="width: 100%; padding: 0.75rem; font-size: 1rem;">
+                Send Now
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- TripAdvisor Review -->
+        <div class="footer-section scroll-reveal">
+          <div class="card" style="background: white; padding: var(--spacing-sm); text-align: center;">
+            <div style="margin-bottom: 0.5rem;">
+              <img src="images/tripadvisor-logo.png" alt="TripAdvisor" style="height: 35px; margin: 0 auto;">
+            </div>
+            <div style="margin-bottom: 0.5rem;">
+              <strong style="color: var(--text-dark); font-size: 0.9rem;">Review Fabulous Asia Tours</strong>
+            </div>
+            <div style="color: #FFD700; font-size: 1rem; margin-bottom: 0.5rem;">
+              ★★★★★
+            </div>
+            <p style="color: var(--text-gray); font-size: 0.8rem; margin-bottom: 0.5rem;">
+              (Click to rate)
+            </p>
+            <a href="https://www.tripadvisor.com" target="_blank" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Continue</a>
+          </div>
+          <div style="margin-top: var(--spacing-md);">
+            <strong>Follow Us On:</strong>
+            <div class="social-links" style="margin-top: var(--spacing-sm);">
+              <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://wa.me/94775659732" target="_blank"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://tripadvisor.com" target="_blank"><i class="fab fa-tripadvisor"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tour Packages -->
+        <div class="footer-section scroll-reveal">
+          <h3>Tour Packages</h3>
+          <ul>
+            <li><a href="nature-wildlife-tours.html">Nature & Wildlife</a></li>
+            <li><a href="#">Honeymoon Tours</a></li>
+            <li><a href="#">Family Tours</a></li>
+            <li><a href="#">Beach Tours</a></li>
+            <li><a href="#">Heritage & Cultural</a></li>
+            <li><a href="#">Adventure Tours</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section scroll-reveal">
+          <h3>Quick Link</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="tailor-made-tours.html">Tailor Made Tours</a></li>
+            <li><a href="tour-packages.html">Tour Packages</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Tourism Badges -->
+        <div class="footer-section scroll-reveal">
+          <p style="margin-bottom: var(--spacing-md);">
+            Fabulous Asia Tours offers exceptional vacation experiences in the tropical island of Sri Lanka!
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <img src="images/safe-travels-badge.png" alt="Safe Travels" style="max-height: 90px; width: auto;">
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <img src="images/srilankan-airlines-logo.png" alt="SriLankan Airlines" style="max-height: 90px; width: auto;">
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <img src="images/sri-lanka-tourism-logo.png" alt="Sri Lanka Tourism" style="max-height: 90px; width: auto;">
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <img src="images/wonder-of-asia-logo.png" alt="Sri Lanka Wonder of Asia" style="max-height: 100px; width: auto;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); text-align: center; margin-bottom: var(--spacing-md);">
+          <div>
+            +94 77-565-9732
+          </div>
+          <div>
+            info@fabulousasiatour.com
+          </div>
+          <div>
+            190/2 Seeduwa Village Colombo Road, Seeduwa, Sri Lanka
+          </div>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-md);">
+          <p style="margin: 0;">Copyright 2022 Fabulous Asia Tours | Design By Naja</p>
+          <div style="flex: 1; display: flex; justify-content: center;">
+            <img src="images/logo.png" alt="Fabulous Asia Tours" style="height: 40px;">
+          </div>
+          <div style="width: 200px;"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script>
+    // Tab switching function
+    function openTab(evt, tabName) {
+      var i, tabcontent, tabbtns;
+      
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      
+      tabbtns = document.getElementsByClassName("tab-btn");
+      for (i = 0; i < tabbtns.length; i++) {
+        tabbtns[i].classList.remove("active");
+      }
+      
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+
+    // Accordion toggle function
+    function toggleDay(element) {
+      const dayItem = element.parentElement;
+      const isActive = dayItem.classList.contains('active');
+      
+      // Close all day items
+      const allDayItems = document.querySelectorAll('.day-item');
+      allDayItems.forEach(item => item.classList.remove('active'));
+      
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        dayItem.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

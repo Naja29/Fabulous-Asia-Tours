@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Honeymoon Tours - 7N/8D | Fabulous Asia Tours</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <style>
+    .tour-tabs { display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-lg); flex-wrap: wrap; }
+    .tab-btn { padding: 0.75rem 2rem; border: 2px solid var(--primary-color); background: white; color: var(--primary-color); border-radius: 50px; cursor: pointer; font-weight: 500; transition: var(--transition-base); }
+    .tab-btn:hover { background: var(--primary-light); color: white; border-color: var(--primary-light); }
+    .tab-btn.active { background: var(--primary-color); color: white; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.5s ease; }
+    .day-item { background: white; border: 1px solid var(--border-color); border-radius: var(--radius-lg); margin-bottom: var(--spacing-md); overflow: hidden; transition: var(--transition-base); }
+    .day-item:hover { box-shadow: var(--shadow-md); }
+    .day-header { display: flex; align-items: center; gap: var(--spacing-md); padding: var(--spacing-md); cursor: pointer; background: white; transition: var(--transition-base); }
+    .day-header:hover { background: var(--background-light); }
+    .day-number { width: 50px; height: 50px; border-radius: 50%; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
+    .day-info { flex: 1; }
+    .day-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.25rem; color: var(--text-dark); }
+    .day-subtitle { font-size: 0.9rem; color: var(--text-gray); text-transform: uppercase; }
+    .day-icon { color: var(--text-gray); transition: var(--transition-base); }
+    .day-item.active .day-icon { transform: rotate(180deg); }
+    .day-content { padding: 0 var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) + 50px + var(--spacing-md)); display: none; }
+    .day-item.active .day-content { display: block; animation: fadeInDown 0.3s ease; }
+    .day-details { color: var(--text-gray); line-height: 1.8; }
+    .day-details ul { margin: var(--spacing-sm) 0; padding-left: var(--spacing-md); }
+    .day-details ul li { margin-bottom: 0.5rem; }
+    .overnight-stay { margin-top: var(--spacing-md); padding: var(--spacing-sm); background: var(--background-light); border-radius: var(--radius-md); font-weight: 500; color: var(--primary-color); }
+    .tour-highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); margin: var(--spacing-lg) 0; }
+    .highlight-item { display: flex; align-items: center; gap: var(--spacing-sm); padding: var(--spacing-sm); background: var(--background-light); border-radius: var(--radius-md); }
+    .highlight-icon { color: var(--accent-color); font-size: 1.2rem; }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <div class="contact-info">
+        <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+94775659732">+94 77-565-9732</a></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@fabulousasiatour.com">info@fabulousasiatour.com</a></div>
+      </div>
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://tripadvisor.com" target="_blank"><i class="fab fa-tripadvisor"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="Fabulous Asia Tours Logo" class="logo-icon"></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="tailor-made-tours.html">Tailor Made Tours</a></li>
+          <li><a href="tour-packages.html" class="active">Tour Packages</a></li>
+          <li><a href="transfer-service.html">Taxi Service</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="hero-section page-hero tour-packages-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content animate-fade-in-up"><h1>Honeymoon Tours</h1></div>
+  </section>
+
+  <section class="section bg-light">
+    <div class="container">
+      <div class="grid grid-2" style="gap: var(--spacing-2xl); align-items: start;">
+        
+        <div class="scroll-reveal">
+          <div class="card hover-zoom" style="margin-bottom: var(--spacing-lg);">
+            <img src="images/honeymoon-tour.jpg" alt="Honeymoon Tours" style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius-lg);">
+          </div>
+
+          <div style="display: flex; gap: var(--spacing-lg); margin-bottom: var(--spacing-md); flex-wrap: wrap;">
+            <p style="font-size: 1rem; color: var(--text-gray);"><i class="fas fa-clock"></i> <strong>7 Nights - 8 Days</strong></p>
+            <p style="font-size: 1rem; color: var(--text-gray);"><i class="fas fa-heart"></i> <strong>Romantic</strong></p>
+            <p style="font-size: 1rem; color: var(--text-gray);"><i class="fas fa-leaf"></i> <strong>Best: Dec-Mar</strong></p>
+          </div>
+
+          <h2 style="margin-bottom: var(--spacing-md);">Romantic Honeymoon Getaway</h2>
+
+          <div class="tour-tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'information')">Information</button>
+            <button class="tab-btn" onclick="openTab(event, 'travelPlan')">Travel Plan</button>
+            <button class="tab-btn" onclick="openTab(event, 'includeExclude')">Include | Exclude</button>
+          </div>
+
+          <div id="information" class="tab-content active">
+            <div class="card" style="padding: var(--spacing-lg);">
+              <h3 style="margin-bottom: var(--spacing-md);">Tour Highlights</h3>
+              <div class="tour-highlights">
+                <div class="highlight-item"><i class="fas fa-spa highlight-icon"></i><span>Couple Spa Sessions</span></div>
+                <div class="highlight-item"><i class="fas fa-umbrella-beach highlight-icon"></i><span>Private Beach Dinners</span></div>
+                <div class="highlight-item"><i class="fas fa-mountain highlight-icon"></i><span>Hill Country Romance</span></div>
+                <div class="highlight-item"><i class="fas fa-camera highlight-icon"></i><span>Scenic Train Ride</span></div>
+              </div>
+
+              <h3 style="margin-bottom: var(--spacing-md);">About This Tour</h3>
+              <p style="text-align: justify; line-height: 1.8; margin-bottom: var(--spacing-md);">
+                Celebrate your love in the paradise island of Sri Lanka! Our specially crafted honeymoon package combines romance, adventure, and relaxation. From the cultural wonders of Kandy to the misty mountains of Nuwara Eliya and pristine beaches of the south coast, create unforgettable memories together.
+              </p>
+              <p style="text-align: justify; line-height: 1.8;">
+                Enjoy intimate moments with candlelit dinners, private excursions, luxury accommodations, and personalized service. Experience the world's most scenic train journey, explore ancient temples, watch elephants in their natural habitat, and relax on golden beaches. This is your perfect romantic escape!
+              </p>
+            </div>
+          </div>
+
+          <div id="travelPlan" class="tab-content">
+            <div class="day-itinerary">
+              
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">01</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 1 : ARRIVAL IN PARADISE</div>
+                    <div class="day-subtitle">COLOMBO TO NEGOMBO</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Welcome to Sri Lanka! Meet and greet at the airport with flower garlands. Transfer to Negombo Beach, check into luxury beach resort. Evening: romantic welcome dinner by the beach with sunset views.</p>
+                    <ul>
+                      <li>Welcome drink and flower decoration in room</li>
+                      <li>Candlelit dinner by the beach</li>
+                      <li>Overnight: 4*/5* Beach Resort</li>
+                    </ul>
+                    <div class="overnight-stay">OVERNIGHT AT NEGOMBO BEACH RESORT</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">02</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 2 : CULTURAL HEART</div>
+                    <div class="day-subtitle">NEGOMBO TO KANDY</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Scenic drive to Kandy (3.5 hours). Visit Pinnawala Elephant Orphanage, watch baby elephants bathing. Afternoon: Temple of the Tooth Relic, Kandy Lake walk. Evening: traditional cultural dance show, romantic dinner at hotel.</p>
+                    <ul>
+                      <li>Private guided tour of sacred sites</li>
+                      <li>Romantic lake-view dinner</li>
+                      <li>Overnight: Luxury hotel with hill views</li>
+                    </ul>
+                    <div class="overnight-stay">OVERNIGHT AT KANDY</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">03</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 3 : TEA COUNTRY ROMANCE</div>
+                    <div class="day-subtitle">KANDY TO NUWARA ELIYA</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Morning drive through scenic tea plantations. Visit tea factory, private tea tasting session. Stop at Ramboda Falls for photos. Arrive Nuwara Eliya - "Little England". Afternoon: Victoria Park, Gregory Lake boating. Evening: cozy fireside dinner.</p>
+                    <ul>
+                      <li>Private tea tasting experience</li>
+                      <li>Lake boating for two</li>
+                      <li>Colonial-style hotel with fireplace</li>
+                    </ul>
+                    <div class="overnight-stay">OVERNIGHT AT NUWARA ELIYA</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">04</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 4 : SCENIC TRAIN JOURNEY</div>
+                    <div class="day-subtitle">NUWARA ELIYA TO ELLA</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Experience one of the world's most romantic train journeys! Travel through emerald tea plantations, misty mountains, and cascading waterfalls. Arrive Ella, check into boutique hotel. Sunset at Little Adam's Peak. Evening: private candlelit dinner.</p>
+                    <ul>
+                      <li>Reserved seats on scenic train</li>
+                      <li>Sunset hike to viewpoint</li>
+                      <li>Boutique hotel with mountain views</li>
+                    </ul>
+                    <div class="overnight-stay">OVERNIGHT AT ELLA</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">05</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 5 : WILDLIFE ADVENTURE</div>
+                    <div class="day-subtitle">ELLA TO YALA</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Morning visit to Nine Arch Bridge. Drive to Yala (3 hours). Afternoon: private jeep safari in Yala National Park - spot leopards, elephants, sloth bears. Return to luxury tented camp. Evening: bush dinner under the stars.</p>
+                    <ul>
+                      <li>Private safari jeep</li>
+                      <li>Luxury glamping experience</li>
+                      <li>Starlit dinner in the wilderness</li>
+                    </ul>
+                    <div class="overnight-stay">OVERNIGHT AT YALA LUXURY CAMP</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">06</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 6 : BEACH PARADISE</div>
+                    <div class="day-subtitle">YALA TO MIRISSA</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Transfer to Mirissa Beach (2 hours). Check into beachfront resort. Day at leisure: relax on golden sands, swim in turquoise waters, enjoy couple spa treatment. Sunset cocktails on the beach. Private beach dinner with bonfire.</p>
+                    <ul>
+                      <li>Beachfront luxury villa</li>
+                      <li>Couple spa session (2 hours)</li>
+                      <li>Private beach setup with bonfire</li>
+                    </ul>
+                    <div class="overnight-stay">OVERNIGHT AT MIRISSA BEACH</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">07</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 7 : COASTAL EXPLORATION</div>
+                    <div class="day-subtitle">MIRISSA & GALLE</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Optional whale watching tour (Nov-Apr). Morning at leisure on beach. Afternoon: visit historic Galle Fort (UNESCO), walk the ramparts, explore boutique shops and cafes. Return to Mirissa. Evening: farewell dinner by the ocean.</p>
+                    <ul>
+                      <li>Optional whale watching</li>
+                      <li>Galle Fort guided tour</li>
+                      <li>Romantic sunset dinner</li>
+                    </ul>
+                    <div class="overnight-stay">OVERNIGHT AT MIRISSA BEACH</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day-item">
+                <div class="day-header" onclick="toggleDay(this)">
+                  <div class="day-number">08</div>
+                  <div class="day-info">
+                    <div class="day-title">DAY 8 : DEPARTURE</div>
+                    <div class="day-subtitle">MIRISSA TO AIRPORT</div>
+                  </div>
+                  <i class="fas fa-chevron-down day-icon"></i>
+                </div>
+                <div class="day-content">
+                  <div class="day-details">
+                    <p>Leisure morning at beach. Late checkout. Transfer to airport (2.5 hours). Depart with beautiful memories of your Sri Lankan honeymoon!</p>
+                    <ul>
+                      <li>Breakfast & late checkout</li>
+                      <li>Airport transfer</li>
+                      <li>Complimentary photo album</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="includeExclude" class="tab-content">
+            <div class="card" style="padding: var(--spacing-lg);">
+              <h3 style="margin-bottom: var(--spacing-md); color: #28a745;"><i class="fas fa-check-circle"></i> Included</h3>
+              <ul style="line-height: 2; margin-bottom: var(--spacing-xl);">
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Airport transfers with flower garlands</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> 4*/5* honeymoon suites & beach villas</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Daily breakfast & 3 special dinners</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Luxury air-conditioned vehicle</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Private chauffeur guide</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Scenic train tickets (reserved seats)</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Private Yala safari</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Couple spa treatment (2 hours)</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> All entrance fees</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Room decorations & honeymoon setup</li>
+                <li><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i> Complimentary photo album</li>
+              </ul>
+
+              <h3 style="margin-bottom: var(--spacing-md); color: #dc3545;"><i class="fas fa-times-circle"></i> Excluded</h3>
+              <ul style="line-height: 2;">
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> International flights</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Visa fees</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Travel insurance</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Lunch & other meals</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Whale watching tour</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Personal expenses & drinks</li>
+                <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Tips & gratuities</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="scroll-reveal">
+          <div class="card" style="padding: var(--spacing-lg); background: var(--secondary-color); color: white; position: sticky; top: 100px;">
+            <h3 style="margin-bottom: var(--spacing-md); color: white;">Send An Inquiry</h3>
+            <form>
+              <div class="form-group"><input type="text" class="form-control" placeholder="Your Name" required></div>
+              <div class="form-group"><input type="email" class="form-control" placeholder="Your Email" required></div>
+              <div class="form-group"><input type="text" class="form-control" placeholder="Your Country" required></div>
+              <div class="form-group"><input type="tel" class="form-control" placeholder="Phone Number" required></div>
+              <div class="grid grid-2" style="gap: var(--spacing-md);">
+                <div class="form-group"><input type="number" class="form-control" placeholder="Adult" value="2" required></div>
+                <div class="form-group"><input type="number" class="form-control" placeholder="Child" value="0"></div>
+              </div>
+              <div class="form-group"><input type="date" class="form-control" required></div>
+              <div class="form-group"><input type="date" class="form-control" required></div>
+              <div class="form-group"><textarea class="form-control" rows="4" placeholder="Your Message"></textarea></div>
+              <button type="submit" class="btn btn-white" style="width: 100%;">Send Now</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section scroll-reveal">
+          <div class="card" style="background: white; padding: var(--spacing-sm); text-align: center;">
+            <div style="margin-bottom: 0.5rem;"><img src="images/tripadvisor-logo.png" alt="TripAdvisor" style="height: 35px; margin: 0 auto;"></div>
+            <div style="margin-bottom: 0.5rem;"><strong style="color: var(--text-dark); font-size: 0.9rem;">Review Fabulous Asia Tours</strong></div>
+            <div style="color: #FFD700; font-size: 1rem; margin-bottom: 0.5rem;">★★★★★</div>
+            <p style="color: var(--text-gray); font-size: 0.8rem; margin-bottom: 0.5rem;">(Click to rate)</p>
+            <a href="https://www.tripadvisor.com" target="_blank" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Continue</a>
+          </div>
+          <div style="margin-top: var(--spacing-md);"><strong>Follow Us On:</strong>
+            <div class="social-links" style="margin-top: var(--spacing-sm);">
+              <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://wa.me/94775659732" target="_blank"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://tripadvisor.com" target="_blank"><i class="fab fa-tripadvisor"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-section scroll-reveal"><h3>Tour Packages</h3><ul><li><a href="nature-wildlife-tours.html">Nature & Wildlife</a></li><li><a href="honeymoon-tours.html">Honeymoon Tours</a></li><li><a href="#">Family Tours</a></li><li><a href="#">Beach Tours</a></li><li><a href="#">Heritage & Cultural</a></li><li><a href="#">Adventure Tours</a></li></ul></div>
+        <div class="footer-section scroll-reveal"><h3>Quick Link</h3><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="tailor-made-tours.html">Tailor Made Tours</a></li><li><a href="tour-packages.html">Tour Packages</a></li><li><a href="activities.html">Activities</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+        <div class="footer-section scroll-reveal">
+          <p style="margin-bottom: var(--spacing-md);">Fabulous Asia Tours offers exceptional vacation experiences in the tropical island of Sri Lanka!</p>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-md);">
+            <div style="display: flex; align-items: center; justify-content: center;"><img src="images/safe-travels-badge.png" alt="Safe Travels" style="max-height: 90px; width: auto;"></div>
+            <div style="display: flex; align-items: center; justify-content: center;"><img src="images/srilankan-airlines-logo.png" alt="SriLankan Airlines" style="max-height: 90px; width: auto;"></div>
+            <div style="display: flex; align-items: center; justify-content: center;"><img src="images/sri-lanka-tourism-logo.png" alt="Sri Lanka Tourism" style="max-height: 90px; width: auto;"></div>
+            <div style="display: flex; align-items: center; justify-content: center;"><img src="images/wonder-of-asia-logo.png" alt="Wonder of Asia" style="max-height: 100px; width: auto;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); text-align: center; margin-bottom: var(--spacing-md);">
+          <div>+94 77-565-9732</div><div>info@fabulousasiatour.com</div><div>190/2 Seeduwa Village Colombo Road, Seeduwa, Sri Lanka</div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-md);">
+          <p style="margin: 0;">Copyright 2022 Fabulous Asia Tours | Design By Naja</p>
+          <div style="flex: 1; display: flex; justify-content: center;"><img src="images/logo.png" alt="Fabulous Asia Tours" style="height: 40px;"></div>
+          <div style="width: 200px;"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tabbtns;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
+      tabbtns = document.getElementsByClassName("tab-btn");
+      for (i = 0; i < tabbtns.length; i++) { tabbtns[i].classList.remove("active"); }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+    function toggleDay(element) {
+      const dayItem = element.parentElement;
+      const isActive = dayItem.classList.contains('active');
+      const allDayItems = document.querySelectorAll('.day-item');
+      allDayItems.forEach(item => item.classList.remove('active'));
+      if (!isActive) { dayItem.classList.add('active'); }
+    }
+  </script>
+</body>
+</html>
