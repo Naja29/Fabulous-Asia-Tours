@@ -73,7 +73,13 @@
     </div>
   </header>
 
-  <section class="hero-section page-hero tour-packages-hero">
+  <!-- Hero Section with Video Background -->
+  <section class="hero-section hero-video">
+    <video class="hero-video-bg" autoplay muted loop playsinline preload="auto">
+      <!-- Honeymoon Video - Romantic beach, sunset, couples -->
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-couple-walking-on-the-beach-at-sunset-4615-large.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <div class="hero-overlay"></div>
     <div class="hero-content animate-fade-in-up"><h1>Honeymoon Tours</h1></div>
   </section>
@@ -336,20 +342,64 @@
 
         <div class="scroll-reveal">
           <div class="card" style="padding: var(--spacing-lg); background: var(--secondary-color); color: white; position: sticky; top: 100px;">
-            <h3 style="margin-bottom: var(--spacing-md); color: white;">Send An Inquiry</h3>
+            <h3 style="margin-bottom: var(--spacing-md); color: white;">Book Your Honeymoon</h3>
             <form>
-              <div class="form-group"><input type="text" class="form-control" placeholder="Your Name" required></div>
-              <div class="form-group"><input type="email" class="form-control" placeholder="Your Email" required></div>
-              <div class="form-group"><input type="text" class="form-control" placeholder="Your Country" required></div>
-              <div class="form-group"><input type="tel" class="form-control" placeholder="Phone Number" required></div>
-              <div class="grid grid-2" style="gap: var(--spacing-md);">
-                <div class="form-group"><input type="number" class="form-control" placeholder="Adult" value="2" required></div>
-                <div class="form-group"><input type="number" class="form-control" placeholder="Child" value="0"></div>
+              <div class="form-group">
+                <label style="color: white; margin-bottom: 0.5rem; display: block; font-size: 0.9rem;">Couple Names *</label>
+                <input type="text" class="form-control" placeholder="Bride & Groom names" required>
               </div>
-              <div class="form-group"><input type="date" class="form-control" required></div>
-              <div class="form-group"><input type="date" class="form-control" required></div>
-              <div class="form-group"><textarea class="form-control" rows="4" placeholder="Your Message"></textarea></div>
-              <button type="submit" class="btn btn-white" style="width: 100%;">Send Now</button>
+              <div class="form-group">
+                <label style="color: white; margin-bottom: 0.5rem; display: block; font-size: 0.9rem;">Email Address *</label>
+                <input type="email" class="form-control" placeholder="your@email.com" required>
+              </div>
+              <div class="form-group">
+                <label style="color: white; margin-bottom: 0.5rem; display: block; font-size: 0.9rem;">Phone Number *</label>
+                <input type="tel" class="form-control" placeholder="+94 77 123 4567" required>
+              </div>
+              <div class="form-group">
+                <label style="color: white; margin-bottom: 0.5rem; display: block; font-size: 0.9rem;">Country *</label>
+                <select class="form-control" required style="background: white; color: var(--text-dark);">
+                  <option value="">Select country</option>
+                  <option value="USA">United States</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Germany">Germany</option>
+                  <option value="France">France</option>
+                  <option value="India">India</option>
+                  <option value="China">China</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label style="color: white; margin-bottom: 0.5rem; display: block; font-size: 0.9rem;">Wedding Date</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="form-group">
+                <label style="color: white; margin-bottom: 0.5rem; display: block; font-size: 0.9rem;">Honeymoon Start Date *</label>
+                <input type="date" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label style="color: white; margin-bottom: 0.5rem; display: block; font-size: 0.9rem;">Accommodation Type</label>
+                <select class="form-control" style="background: white; color: var(--text-dark);">
+                  <option value="">Select preference</option>
+                  <option value="luxury">5-Star Luxury Resort</option>
+                  <option value="boutique">Romantic Boutique Hotel</option>
+                  <option value="beach">Beachfront Villa</option>
+                  <option value="heritage">Heritage Hotel</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label style="color: white; margin-bottom: 0.5rem; display: block; font-size: 0.9rem;">Special Requests</label>
+                <textarea class="form-control" rows="3" placeholder="Anniversary surprises, special arrangements, dietary needs..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-white" style="width: 100%; padding: 0.75rem; font-weight: 600;">
+                <i class="fas fa-heart" style="margin-right: 0.5rem;"></i>
+                Book Honeymoon
+              </button>
+              <p style="font-size: 0.8rem; margin-top: var(--spacing-md); opacity: 0.8; text-align: center;">
+                We'll create a perfect romantic experience
+              </p>
             </form>
           </div>
         </div>
