@@ -24,8 +24,202 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/animations.css">
+
+  <style>
+    /* WhatsApp Float Button */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #128c7e;
+      transform: scale(1.1);
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    /* Counter Animation */
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Newsletter Section */
+    .newsletter-form {
+      display: flex;
+      gap: var(--spacing-sm);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.875rem 1.25rem;
+      border: 2px solid white;
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+    }
+
+    .newsletter-form button {
+      padding: 0.875rem 1.75rem;
+      background: white;
+      color: var(--primary-color);
+      border: none;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Destination Card Hover Effect */
+    .destination-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      height: 300px;
+    }
+
+    .destination-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .destination-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .destination-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+      padding: var(--spacing-lg);
+      color: white;
+    }
+
+    .destination-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .destination-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.9);
+      margin: 0;
+    }
+
+    /* Process Step Styling */
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .process-icon {
+      width: 100px;
+      height: 100px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--spacing-md);
+      font-size: 2.5rem;
+      box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+    }
+
+    .process-step-number {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 35px;
+      height: 35px;
+      background: #ff9800;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .process-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/94775659732" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <!-- Top Bar -->
   <div class="top-bar">
@@ -100,6 +294,35 @@
     </div>
   </section>
 
+  <!-- Statistics Section -->
+  <section class="section" style="background: var(--primary-color); color: white;">
+    <div class="container">
+      <div class="grid grid-4" style="gap: var(--spacing-xl);">
+        
+        <div class="scroll-reveal" style="text-align: center;">
+          <div class="stat-number" style="color: white;">15+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.9);">Years Experience</div>
+        </div>
+
+        <div class="scroll-reveal" style="text-align: center;">
+          <div class="stat-number" style="color: white;">5000+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.9);">Happy Travelers</div>
+        </div>
+
+        <div class="scroll-reveal" style="text-align: center;">
+          <div class="stat-number" style="color: white;">500+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.9);">Tours Completed</div>
+        </div>
+
+        <div class="scroll-reveal" style="text-align: center;">
+          <div class="stat-number" style="color: white;">98%</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.9);">Satisfaction Rate</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- About Preview Section -->
   <section class="section bg-light">
     <div class="container">
@@ -125,17 +348,253 @@
           <h2>Fabulous Asia Tours</h2>
           <p>
             We take pride in serving our clients in the best possible way. As one of the best Sri Lankan travel and tourism 
-            service providers, we have the expertise to make your association with us an unforgettable experience. We have a 
-            high caliber professionals in our dynamic team. Our strength is our people who have got an extensive experience 
+            service providers, we have the expertise to make your association with us an unforgettable experience. We have 
+            high caliber professionals in our dynamic team. Our strength is our people who have extensive experience 
             in the field of tourism and travel.
           </p>
           <p>
             We understand that travellers look for different experiences. Not every traveller loves to dine in luxury 
-            hotels meanwhile not every traveller loves to spend the time like a local citizen. As specialists in field of 
+            hotels meanwhile not every traveller loves to spend the time like a local citizen. As specialists in the field of 
             tourism and travel we have the capability to align our tour plans perfectly to fit into those exact requirements.
           </p>
-          <a href="about.html" class="btn btn-primary hover-lift" style="margin-top: var(--spacing-md);">Learn More</a>
+          <a href="about.html" class="btn btn-primary hover-lift" style="margin-top: var(--spacing-md);">Learn More About Us</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title scroll-reveal">
+        <h2>Why Choose Fabulous Asia Tours?</h2>
+        <p>Your satisfaction is our priority. Here's what makes us different</p>
+      </div>
+
+      <div class="grid grid-4" style="gap: var(--spacing-lg);">
+        
+        <div class="scroll-reveal">
+          <div class="card" style="padding: var(--spacing-lg); text-align: center; height: 100%;">
+            <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: var(--spacing-sm);">Licensed & Certified</h3>
+            <p style="color: var(--text-gray); font-size: 0.95rem; margin: 0;">Fully licensed tour operator with all necessary certifications for your safety</p>
+          </div>
+        </div>
+
+        <div class="scroll-reveal">
+          <div class="card" style="padding: var(--spacing-lg); text-align: center; height: 100%;">
+            <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: var(--spacing-sm);">Expert Local Guides</h3>
+            <p style="color: var(--text-gray); font-size: 0.95rem; margin: 0;">Knowledgeable guides who share the rich culture and history of Sri Lanka</p>
+          </div>
+        </div>
+
+        <div class="scroll-reveal">
+          <div class="card" style="padding: var(--spacing-lg); text-align: center; height: 100%;">
+            <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: var(--spacing-sm);">Best Price Guarantee</h3>
+            <p style="color: var(--text-gray); font-size: 0.95rem; margin: 0;">Competitive rates with no hidden costs. Get the best value for your money</p>
+          </div>
+        </div>
+
+        <div class="scroll-reveal">
+          <div class="card" style="padding: var(--spacing-lg); text-align: center; height: 100%;">
+            <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: var(--spacing-sm);">24/7 Support</h3>
+            <p style="color: var(--text-gray); font-size: 0.95rem; margin: 0;">Round-the-clock customer support throughout your journey</p>
+          </div>
+        </div>
+
+        <div class="scroll-reveal">
+          <div class="card" style="padding: var(--spacing-lg); text-align: center; height: 100%;">
+            <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);">
+              <i class="fas fa-car"></i>
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: var(--spacing-sm);">Modern Vehicles</h3>
+            <p style="color: var(--text-gray); font-size: 0.95rem; margin: 0;">Comfortable, air-conditioned vehicles with experienced drivers</p>
+          </div>
+        </div>
+
+        <div class="scroll-reveal">
+          <div class="card" style="padding: var(--spacing-lg); text-align: center; height: 100%;">
+            <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);">
+              <i class="fas fa-edit"></i>
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: var(--spacing-sm);">Flexible Itineraries</h3>
+            <p style="color: var(--text-gray); font-size: 0.95rem; margin: 0;">Customize your tour to match your interests and schedule</p>
+          </div>
+        </div>
+
+        <div class="scroll-reveal">
+          <div class="card" style="padding: var(--spacing-lg); text-align: center; height: 100%;">
+            <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);">
+              <i class="fas fa-hotel"></i>
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: var(--spacing-sm);">Quality Accommodations</h3>
+            <p style="color: var(--text-gray); font-size: 0.95rem; margin: 0;">Carefully selected hotels and resorts for comfort and quality</p>
+          </div>
+        </div>
+
+        <div class="scroll-reveal">
+          <div class="card" style="padding: var(--spacing-lg); text-align: center; height: 100%;">
+            <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: var(--spacing-sm);">Eco-Friendly Tourism</h3>
+            <p style="color: var(--text-gray); font-size: 0.95rem; margin: 0;">Committed to sustainable and responsible travel practices</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Destinations Section -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-title scroll-reveal">
+        <h2>Explore Sri Lanka's Must-Visit Destinations</h2>
+        <p>From ancient cities to pristine beaches, discover the best of Sri Lanka</p>
+      </div>
+
+      <div class="grid grid-3" style="gap: var(--spacing-lg);">
+        
+        <!-- Sigiriya -->
+        <div class="scroll-reveal">
+          <div class="destination-card">
+            <img src="images/Sigiriya.jpg" alt="Sigiriya Rock Fortress">
+            <div class="destination-overlay">
+              <h3>Sigiriya</h3>
+              <p>Ancient rock fortress and UNESCO World Heritage Site</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ella -->
+        <div class="scroll-reveal">
+          <div class="destination-card">
+            <img src="images/Ella.jpg" alt="Ella">
+            <div class="destination-overlay">
+              <h3>Ella</h3>
+              <p>Scenic hill country with tea plantations and waterfalls</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Galle -->
+        <div class="scroll-reveal">
+          <div class="destination-card">
+            <img src="images/Galle.jpg" alt="Galle Fort">
+            <div class="destination-overlay">
+              <h3>Galle</h3>
+              <p>Historic colonial fort city by the southern coast</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yala National Park -->
+        <div class="scroll-reveal">
+          <div class="destination-card">
+            <img src="images/Yala National Park.jpg" alt="Yala National Park">
+            <div class="destination-overlay">
+              <h3>Yala National Park</h3>
+              <p>World-famous wildlife sanctuary with leopards and elephants</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kandy -->
+        <div class="scroll-reveal">
+          <div class="destination-card">
+            <img src="images/Kandy.jpg" alt="Kandy">
+            <div class="destination-overlay">
+              <h3>Kandy</h3>
+              <p>Sacred city home to the Temple of the Tooth Relic</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mirissa -->
+        <div class="scroll-reveal">
+          <div class="destination-card">
+            <img src="images/Mirissa.jpg" alt="Mirissa Beach">
+            <div class="destination-overlay">
+              <h3>Mirissa</h3>
+              <p>Beautiful beach town perfect for whale watching</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title scroll-reveal">
+        <h2>How to Book Your Dream Tour</h2>
+        <p>Simple steps to start your Sri Lankan adventure</p>
+      </div>
+
+      <div class="grid grid-4" style="gap: var(--spacing-xl);">
+        
+        <!-- Step 1 -->
+        <div class="scroll-reveal process-step">
+          <div style="position: relative; display: inline-block;">
+            <div class="process-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <div class="process-step-number">1</div>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: var(--spacing-sm);">Choose Your Tour</h3>
+          <p style="color: var(--text-gray); margin: 0;">Browse our packages or request a custom itinerary tailored to your preferences</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="scroll-reveal process-step">
+          <div style="position: relative; display: inline-block;">
+            <div class="process-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="process-step-number">2</div>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: var(--spacing-sm);">Get in Touch</h3>
+          <p style="color: var(--text-gray); margin: 0;">Contact us via phone, email, or WhatsApp to discuss your requirements</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="scroll-reveal process-step">
+          <div style="position: relative; display: inline-block;">
+            <div class="process-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="process-step-number">3</div>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: var(--spacing-sm);">Confirm Booking</h3>
+          <p style="color: var(--text-gray); margin: 0;">Review your itinerary, make payment, and receive confirmation details</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="scroll-reveal process-step">
+          <div style="position: relative; display: inline-block;">
+            <div class="process-icon">
+              <i class="fas fa-plane"></i>
+            </div>
+            <div class="process-step-number">4</div>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: var(--spacing-sm);">Start Your Journey</h3>
+          <p style="color: var(--text-gray); margin: 0;">Arrive in Sri Lanka and enjoy your perfectly planned adventure</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -146,10 +605,10 @@
     <div class="container" style="position: relative; z-index: 2;">
       <div class="section-title scroll-reveal">
         <h2 style="color: white;">Tailor Made Tours</h2>
-        <p style="color: rgba(255,255,255,0.9);">24/7 customer handling, quick response to customer inquiries, best holiday experience in Sri Lanka with our touch of professional services will satisfy all the customers. That is what we do best.</p>
+        <p style="color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto;">24/7 customer handling, quick response to customer inquiries, best holiday experience in Sri Lanka with our touch of professional services will satisfy all the customers. That is what we do best.</p>
       </div>
       <div style="text-align: center;">
-        <a href="tailor-made-tours.html" class="btn btn-white hover-lift">Click To View</a>
+        <a href="tailor-made-tours.html" class="btn btn-white hover-lift">Design Your Custom Tour</a>
       </div>
     </div>
   </section>
@@ -171,7 +630,10 @@
             <p style="color: var(--text-gray); margin-bottom: var(--spacing-sm);">
               <i class="fas fa-clock"></i> 11 Nights | 12 Days
             </p>
-            <a href="nature-wildlife-tours.html" class="btn btn-primary" style="width: 100%;">More Details →</a>
+            <p style="font-size: 0.9rem; color: var(--text-gray); margin-bottom: var(--spacing-md);">
+              Explore Sri Lanka's incredible wildlife with safaris, national parks, and nature reserves
+            </p>
+            <a href="nature-wildlife-tours.html" class="btn btn-primary" style="width: 100%;">View Details →</a>
           </div>
         </div>
 
@@ -183,7 +645,10 @@
             <p style="color: var(--text-gray); margin-bottom: var(--spacing-sm);">
               <i class="fas fa-clock"></i> 07 Nights | 08 Days
             </p>
-            <a href="honeymoon-tours.html" class="btn btn-primary" style="width: 100%;">More Details →</a>
+            <p style="font-size: 0.9rem; color: var(--text-gray); margin-bottom: var(--spacing-md);">
+              Romantic escapes with luxury accommodations and unforgettable experiences
+            </p>
+            <a href="honeymoon-tours.html" class="btn btn-primary" style="width: 100%;">View Details →</a>
           </div>
         </div>
 
@@ -195,7 +660,10 @@
             <p style="color: var(--text-gray); margin-bottom: var(--spacing-sm);">
               <i class="fas fa-clock"></i> 11 Nights | 12 Days
             </p>
-            <a href="family-tours.html" class="btn btn-primary" style="width: 100%;">More Details →</a>
+            <p style="font-size: 0.9rem; color: var(--text-gray); margin-bottom: var(--spacing-md);">
+              Fun-filled adventures perfect for all ages with family-friendly activities
+            </p>
+            <a href="family-tours.html" class="btn btn-primary" style="width: 100%;">View Details →</a>
           </div>
         </div>
 
@@ -207,7 +675,10 @@
             <p style="color: var(--text-gray); margin-bottom: var(--spacing-sm);">
               <i class="fas fa-clock"></i> 06 Nights | 07 Days
             </p>
-            <a href="beach-tours.html" class="btn btn-primary" style="width: 100%;">More Details →</a>
+            <p style="font-size: 0.9rem; color: var(--text-gray); margin-bottom: var(--spacing-md);">
+              Relax on pristine beaches with water sports and coastal adventures
+            </p>
+            <a href="beach-tours.html" class="btn btn-primary" style="width: 100%;">View Details →</a>
           </div>
         </div>
 
@@ -219,7 +690,10 @@
             <p style="color: var(--text-gray); margin-bottom: var(--spacing-sm);">
               <i class="fas fa-clock"></i> 10 Nights | 11 Days
             </p>
-            <a href="heritage-cultural-tours.html" class="btn btn-primary" style="width: 100%;">More Details →</a>
+            <p style="font-size: 0.9rem; color: var(--text-gray); margin-bottom: var(--spacing-md);">
+              Discover ancient temples, UNESCO sites, and rich cultural heritage
+            </p>
+            <a href="heritage-cultural-tours.html" class="btn btn-primary" style="width: 100%;">View Details →</a>
           </div>
         </div>
 
@@ -231,9 +705,16 @@
             <p style="color: var(--text-gray); margin-bottom: var(--spacing-sm);">
               <i class="fas fa-clock"></i> 11 Nights | 12 Days
             </p>
-            <a href="adventure-tours.html" class="btn btn-primary" style="width: 100%;">More Details →</a>
+            <p style="font-size: 0.9rem; color: var(--text-gray); margin-bottom: var(--spacing-md);">
+              Thrilling activities including hiking, surfing, and extreme sports
+            </p>
+            <a href="adventure-tours.html" class="btn btn-primary" style="width: 100%;">View Details →</a>
           </div>
         </div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--spacing-xl);">
+        <a href="tour-packages.html" class="btn btn-primary hover-lift" style="padding: 0.875rem 2rem;">View All Tour Packages</a>
       </div>
     </div>
   </section>
@@ -245,13 +726,42 @@
       <div class="grid grid-2" style="align-items: center; gap: var(--spacing-2xl);">
         <div class="scroll-reveal">
           <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">TRANSFER SERVICE</h2>
-          <p style="color: rgba(255,255,255,0.95); font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">
-            Get ready to start your exciting journey. Our agent will lead you through out the journey
+          <p style="color: rgba(255,255,255,0.95); font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); line-height: 1.7;">
+            Get ready to start your exciting journey. Our professional drivers and comfortable vehicles will ensure you travel safely and comfortably throughout Sri Lanka.
           </p>
+          <ul style="color: rgba(255,255,255,0.9); margin-top: var(--spacing-md); list-style: none; padding: 0;">
+            <li style="margin-bottom: var(--spacing-sm);"><i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i> Airport Pickup & Drop-off</li>
+            <li style="margin-bottom: var(--spacing-sm);"><i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i> City Tours & Excursions</li>
+            <li style="margin-bottom: var(--spacing-sm);"><i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i> Inter-city Travel</li>
+            <li><i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i> Multi-day Tour Transport</li>
+          </ul>
         </div>
         <div class="scroll-reveal" style="text-align: right;">
-          <a href="transfer-service.html" class="btn btn-white hover-lift">Book Now</a>
+          <a href="transfer-service.html" class="btn btn-white hover-lift" style="padding: 1rem 2rem; font-size: 1.1rem;">Book Now</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, #1565c0 100%); color: white;">
+    <div class="container">
+      <div class="text-center scroll-reveal">
+        <h2 style="font-size: 2rem; margin-bottom: var(--spacing-sm); color: white;">Stay Updated with Our Latest Offers</h2>
+        <p style="font-size: 1.1rem; margin-bottom: var(--spacing-lg); opacity: 0.95;">
+          Subscribe to our newsletter and receive exclusive deals and travel tips
+        </p>
+        
+        <form class="newsletter-form" onsubmit="return handleNewsletter(event);">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit">
+            <i class="fas fa-paper-plane"></i> Subscribe
+          </button>
+        </form>
+
+        <p style="font-size: 0.85rem; margin-top: var(--spacing-md); opacity: 0.8;">
+          We respect your privacy. Unsubscribe at any time.
+        </p>
       </div>
     </div>
   </section>
@@ -363,5 +873,61 @@
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>
+
+  <script>
+    // Newsletter Form Handler
+    function handleNewsletter(event) {
+      event.preventDefault();
+      const email = event.target.querySelector('input[type="email"]').value;
+      
+      // Here you would typically send the email to your backend
+      alert('Thank you for subscribing! We\'ll send you our latest offers to ' + email);
+      event.target.reset();
+      
+      return false;
+    }
+
+    // Counter Animation
+    function animateCounter(element, target) {
+      let current = 0;
+      const increment = target / 100;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target + (element.textContent.includes('+') ? '+' : '%');
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : '%');
+        }
+      }, 20);
+    }
+
+    // Trigger counter animation when section is visible
+    const observerOptions = {
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+          const counters = entry.target.querySelectorAll('.stat-number');
+          counters.forEach(counter => {
+            const target = parseInt(counter.textContent);
+            animateCounter(counter, target);
+          });
+          entry.target.classList.add('counted');
+        }
+      });
+    }, observerOptions);
+
+    // Observe statistics section
+    window.addEventListener('load', () => {
+      const statsSection = document.querySelector('.stat-number')?.closest('.section');
+      if (statsSection) {
+        observer.observe(statsSection);
+      }
+    });
+  </script>
+
 </body>
 </html>
